@@ -1,0 +1,421 @@
+1.From the following table, write a SQL query to find all reviewers whose ratings contain a NULL value. Return reviewer name.
+
+Sample table: reviewer
+
+rev_id | rev_name
+--------+--------------------------------
+9001 | Righty Sock
+9002 | Jack Malvern
+9003 | Flagrant Baronessa
+9004 | Alec Shaw
+9005 |
+9006 | Victor Woeltjen
+9007 | Simon Wright
+9008 | Neal Wruck
+9009 | Paul Monks
+9010 | Mike Salvati
+9011 |
+9012 | Wesley S. Walker
+9013 | Sasha Goldshtein
+9014 | Josh Cates
+9015 | Krug Stillo
+9016 | Scott LeBrun
+9017 | Hannah Steele
+9018 | Vincent Cadena
+9019 | Brandt Sponseller
+9020 | Richard Adams
+
+Sample table: rating
+
+mov_id | rev_id | rev_stars | num_o_ratings
+--------+--------+-----------+---------------
+901 | 9001 | 8.40 | 263575
+902 | 9002 | 7.90 | 20207
+903 | 9003 | 8.30 | 202778
+906 | 9005 | 8.20 | 484746
+924 | 9006 | 7.30 |
+908 | 9007 | 8.60 | 779489
+909 | 9008 | | 227235
+910 | 9009 | 3.00 | 195961
+911 | 9010 | 8.10 | 203875
+912 | 9011 | 8.40 |
+914 | 9013 | 7.00 | 862618
+915 | 9001 | 7.70 | 830095
+916 | 9014 | 4.00 | 642132
+925 | 9015 | 7.70 | 81328
+918 | 9016 | | 580301
+920 | 9017 | 8.10 | 609451
+921 | 9018 | 8.00 | 667758
+922 | 9019 | 8.40 | 511613
+923 | 9020 | 6.70 | 13091
+
+answer:
+
+select rev_name from reviewer
+inner join rating using(rev_id)
+where rev_stars is null;
+
+2.write a query to explain self join?
+
+answer:
+
+The SQL SELF JOIN is used to join a table to itself.
+that means each row in a table joined to itself and every other row in that table.
+
+Syntax:
+SELECT a.column_name,b.column_name
+from table1 a, table1 b
+where a.common_field=b.common_field;
+
+
+3.Write code to calculate the number of vowels and consonants in a string
+
+answer:
+public class countVC{
+public static void main(string[] args){
+int vcount=0,ccount=0;
+string str="This is a really simple sentence";
+str=str.toLowerCase();
+for(int i=0;i<str.lenght();i++{
+   if(str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='o'||str.charAt(i)=='u'){
+vCount++;
+      else if(str.charAt(i)>='a'&& str.charAt(i)<='z'){
+cCount++;
+}
+}
+system.out.printIn("number of vowels:"+vCount)
+system.out.printIn("number of Constant:"+cCount);
+}
+}
+
+4.how to code two factor authentication with an authenticator app like authy
+
+answer:
+adding two factor authentication (2FA) it is secure all your user account.
+steps
+1. Setup your online account for 2FA with authy from websites like authy.com
+2. Add the 2FA account token to Authy click on appropriate link to see how to add new 2FA account authy apps are chrome android ..
+3. Add new 2FA account token on the chrome APP
+    a. open authy chrome app
+    b. click on setting
+    c. add authenticator account
+    d. add account
+    e. enter the code from your desired account page and then click on add account
+    f. select the logo and token lenght enter account name and click on done 
+    g. click on accept and close the window click your new account
+    h.You will see your account on authy enter the code on your account page and then submit it
+
+5.Create a responsive registration form using bootstrap
+
+answer:
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title> registration Page</title>
+<head>
+<body>
+<section class="h-100 h-custom" style="background-color: black;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="background.jpg"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="color photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+
+            <form class="px-md-2">
+
+              <div class="form-outline mb-4">
+                <input type="text" id="form3Example1q" class="form-control" />
+                <label class="form-label" for="form3Example1q">Name</label>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline datepicker">
+                    <input type="text" class="form-control" id="exampleDatepicker1" />
+                    <label for="exampleDatepicker1" class="form-label">Select a date</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <select class="select">
+                    <option value="1" disabled>Gender</option>
+                    <option value="2">Female</option>
+                    <option value="3">Male</option>
+                    <option value="4">Other</option>
+                  </select>
+
+                </div>
+              </div>
+
+              <div class="mb-4">
+
+                <select class="select">
+                  <option value="1" disabled>Class</option>
+                  <option value="2">Class 1</option>
+                  <option value="3">Class 2</option>
+                  <option value="4">Class 3</option>
+                </select>
+
+              </div>
+
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-6">
+
+                  <div class="form-outline">
+                    <input type="text" id="form3Example1w" class="form-control" />
+                    <label class="form-label" for="form3Example1w">Registration code</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+
+
+style.css
+@media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}
+
+
+6.Write a code to check two accepted numbers are amicable or not.
+
+answer:
+x=int(input('Enter number 1: '))
+y=int(input('Enter number 2: '))
+sum1=0
+sum2=0
+for i in range(1,x):
+    if x%i==0:
+        sum1+=i
+for j in range(1,y):
+    if y%j==0:
+        sum2+=j
+if(sum1==y and sum2==x):
+    print('Amicable!')
+else:
+    print('Not Amicable!')
+
+7.From the following table, write a SQL query to find the details of 1970 Nobel Prize winners. Order the results by subject, ascending except for 'Chemistry' and ‘Economics’ which will come at the end of the result set. Return year, subject, winner, country, and category.
+
+ANSWER:
+select * from nobel_win
+where year=1970
+order by 
+case
+  when subject in ('Economics', 'Chemistry') then 1
+  else 0
+end ASC
+subject,
+winner;
+
+8.create replica for amazon.com homepage using bootstrap?
+
+
+
+9.Write a program to create 3 matrices of user defined dimensions. Matrices to be named as cost, benefit, board.
+Randomly fill the values in first two matrices, third matrix needs only "*" or "." as the input if other values entered it should display wrong input entered and should ask for the value again. Based on cells having "*" should be counted as selected and should display loss or profit.
+
+ANSWER:
+#include <stdio.h>
+
+void main()
+{
+  int arr1[3][3],i,j;
+  
+       printf("\n\nRead a 2D array of size 3x3 and print the matrix :\n");
+       printf("------------------------------------------------------\n");  
+  
+ 
+    /* Stored values into the array*/
+       printf("Input elements in the matrix :\n");
+  for(i=0;i<3;i++)
+  {
+      for(j=0;j<3;j++)
+      {
+	      printf("element - [%d],[%d] : ",i,j);
+	      scanf("%d",&arr1[i][j]);
+      }
+  }  
+ 
+ printf("\nThe matrix is : \n");
+  for(i=0;i<3;i++)
+  {
+      printf("\n");
+      for(j=0;j<3;j++)
+           printf("%d\t",arr1[i][j]);
+  }
+ printf("\n\n");
+}
+
+10.write a program to Print Right Alphabetic triangle
+
+A
+A B
+A B C
+A B C D
+A B C D E
+
+
+ANSWER:
+#include <stdio.h>
+
+int main()
+{
+    int i, j, rows, alphabet = 14;
+    
+    printf("Enter Right Triangle Alphabets Pattern Rows = ");
+    scanf("%d",&rows);
+
+    printf("The Right Angled Triangle Alphabets Pattern\n"); 
+    
+	for (i = 0 ; i < rows; i++ ) 
+	{
+		for (j = 0 ; j <= i; j++ ) 	
+		{
+			printf("%c ", alphabet + j);
+		}
+		printf("\n");
+	}
+
+    return 0;
+}
+
+11.Consider the following database schema to write queries in SQL
+
+ANSWER
+i) select sname
+from sailors s,boats b, reserves r
+where s.sid=r.sid and b.bid=r.bid and b.color='red';
+
+ii)
+select s.sid,s.sname from sailors s
+where s.sid in(select s.sid from sailors s,boats b,revers r
+where s.sid=r.sid and b.bid=r.bid
+group by s.sid;
+
+iii) select b.color
+from boats b, sailor s, reverse r
+where s.sid=r.sid and b.bid=r.bid and s.sname='Mohan';
+
+iv)select s.sid,s.sname
+from sailors s,boats b,reverse r
+where s.sid=r.sid and b.bid=r.bid and b.color='red';
+intersect
+select s.sid,s.sname
+from sailors s,boats b,reverse r
+where s.sid=r.sid and b.bid=r.bid and b.color='green';
+
+v)select s.sid,s.sname
+from sailors s,boats b,reverse r
+where s.sid=r.sid and b.bid=r.bid and s.age>20 and b.color!='red';
+
+12.Write a program to print mirror lower star triangle pattern of n lines
+
+Input: 7
+
+ANSWER:
+import java.util.Scanner;
+public class Mirror{
+   public static void main(String args[]){
+      int i, j, k, my_input;
+      System.out.println("Required packages have been imported");
+      Scanner my_scanner = new Scanner(System.in);
+      System.out.println("A reader object has been defined ");
+      System.out.print("Enter the number of rows : ");
+      my_input = my_scanner.nextInt();
+      System.out.println("The Mirror Lower Star Triangle pattern : ");
+      for (i = 1; i <= my_input; i++) {
+         for (j = 1; j < i; j++) {
+            System.out.print(" ");
+         }
+         for (j = i; j <= my_input; j++) {
+            System.out.print("*" + " ");
+         }
+         System.out.println();
+      }
+      for (i = my_input - 1; i >= 0; i--) {
+         for (j = 0; j < i; j++) {
+            System.out.print(" ");
+         }
+         for (j = i; j <= my_input - 1; j++) {
+            System.out.print("*" + " ");
+         }
+         System.out.println();
+      }
+   }
+}
+
+13.Write a program to check if two strings are Anagrams or not (check explanations for details)
+
+ANSWER:
+import java.util.Arrays;
+
+class Main {
+  public static void main(String[] args) {
+    String str1 = "Race";
+    String str2 = "Care";
+    
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+
+    // check if length is same
+    if(str1.length() == str2.length()) {
+
+      // convert strings to char array
+      char[] charArray1 = str1.toCharArray();
+      char[] charArray2 = str2.toCharArray();
+
+      // sort the char array
+      Arrays.sort(charArray1);
+      Arrays.sort(charArray2);
+
+      // if sorted char arrays are same
+      // then the string is anagram
+      boolean result = Arrays.equals(charArray1, charArray2);
+
+      if(result) {
+        System.out.println(str1 + " and " + str2 + " are anagram.");
+      }
+      else {
+        System.out.println(str1 + " and " + str2 + " are not anagram.");
+      }
+    }
+    else {
+      System.out.println(str1 + " and " + str2 + " are not anagram.");
+    }
+  }
+}
+
+14.Write the queries for implementing the following functions
+
+a) MAX
+b) MIN
+c) AVG
+d) COUNT
+e) SUM
+
+ANSWER:select min(salary) from employee;
+select max(salary) from employee;
+select avg(salary) from employee;
+select count(*) from employee;
+select sum(salary) from employee;
